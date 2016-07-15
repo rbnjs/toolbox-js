@@ -1,0 +1,21 @@
+{
+  "name": "toolbox-js",
+  "version": "0.0.1",
+  "description": "Save util functions in a common place",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tool"
+  ],
+  "author": "Ruben Serradas",
+  "license": "MIT",
+  "dependencies": {
+    "immutable": "^3.8.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}
