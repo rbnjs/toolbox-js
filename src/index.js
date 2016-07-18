@@ -17,10 +17,10 @@ function registerTools(tools) {
 }
 
 function registerToolBox(name, tools){
-  if (typeof tool !== 'string'){
+  if (typeof name !== 'string'){
     throw invalidParameterException('string',name);
   }
-  if (typeof tool !== 'object'){
+  if (typeof tools !== 'object'){
     throw invalidParameterException('object', tools);
   }
   newToolBox = {};
@@ -48,12 +48,12 @@ function addToolIfPossible(toolName, tool){
  * @return {String} Returns an error message when the user uses a bad parameter.
  */
 function invalidParameterException(paramName, badValue){
-  return  "The value " + badValue.toString + " is not a valid " + paramName;
+  return  "The value " + badValue.toString() + " is not a valid " + paramName;
 }
 
 // Exports
 module.exports = {
-  toolbox: toObjectToolBox,
+  tools: toObjectToolBox,
   registerToolBox: registerToolBox,
   registerTools: registerTools
 };
