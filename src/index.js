@@ -11,7 +11,7 @@ function registerTools(tools) {
   }
   for (let toolName in tools){
     if (tools.hasOwnProperty(toolName)){
-      addToolIfPossible(toolName, tools[toolName])
+      toolbox = toolbox.set(toolName, tools[toolName]);
     }
   }
 }
@@ -23,9 +23,7 @@ function registerToolBox(name, tools){
   if (typeof tools !== 'object'){
     throw invalidParameterException('object', tools);
   }
-  newToolBox = {};
-  newToolBox[name] = tools;
-  addToolIfPossible(newToolBox);
+  toolbox = toolbox.set(name, tools);
 }
 
 /**
@@ -33,15 +31,6 @@ function registerToolBox(name, tools){
  */
 function toObjectToolBox(){
   return toolbox.toJS();
-}
-
-/**
- * Adds a tool to the toolbox if there's no tool with the name toolName
- * @param {String} toolName name of the new tool
- * @param {Function|Object} 
- */
-function addToolIfPossible(toolName, tool){
-  toolbox = toolbox.set(toolName, tool);
 }
 
 /**

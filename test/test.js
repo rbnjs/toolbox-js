@@ -18,6 +18,7 @@ const utils = {
 };
 
 describe('Toolbox', function() {
+
   describe('registerTools', function() {
 
     it('should throw an exception if the parameter is wrong', function() {
@@ -43,6 +44,7 @@ describe('Toolbox', function() {
   });
 
   describe('registerToolBox', function() {
+
     it('should throw an exception if the name parameter is wrong', function() {
       expect(() => Toolbox.registerToolBox(123)).to.throw("The value 123 is not a valid string")
     });
@@ -56,6 +58,24 @@ describe('Toolbox', function() {
       var tools = Toolbox.tools();
       assert.deepEqual(tools.calculator, utils);
     });
+
+    it('should maintain the tools saved', function() {
+      var tools = Toolbox.tools();
+      assert.deepEqual(tools.calculator, utils);
+    });
     
+    it('should be able to call the tools', function() {
+      var tools = Toolbox.tools();
+      assert.equal(4, tools.calculator.plus(2,2))
+    });
+  });
+
+  describe ('tools', function (){
+
+    it('should return an object', function() {
+      var tools = Toolbox.tools();
+      assert.isTrue(typeof tools === 'object');
+    });
+      
   });
 });
