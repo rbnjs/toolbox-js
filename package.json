@@ -1,6 +1,6 @@
 {
   "name": "toolbox-js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Save util functions in a common place",
   "main": "src/index.js",
   "scripts": {
